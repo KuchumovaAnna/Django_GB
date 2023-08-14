@@ -1,0 +1,55 @@
+﻿{% extends 'authapp/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+	<title>{{block.super}} / {{title}} </title>
+{% endblock %}
+
+{% block meta %}
+<meta http-equiv="Content-Language" content="ru">
+<meta name="keywords" content="Вход">
+<meta name="description" content="Вход">
+{% endblock %}
+
+{% block css %}
+<link type="text/css" href="{% static 'css/common.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/fonts.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/basket.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block center %}
+	<div class="clear"></div>
+	<div id="dual" class="wr-canvas">
+	<h1>Войти</h1>
+		<form class="auth_form" id="loginForm"  method="post" action="{% url 'auth:login' %}">
+			
+			<table class="l-f-table" cellpadding="0" cellspacing="0" border="0">
+			<tbody>
+			<tr><td style="width:120px">{% csrf_token %}</td></tr>
+			{% for item in login_form %}
+			<tr>
+			<td style="width:120px">{{item.label}}</td>
+			<td class="field">{{item}}</td>
+			</tr>
+			{%endfor%}
+            <tr>
+			<td class="field" style="padding-top: 20px;"><button type="submit">Вход</button></td>
+            </tr>
+			</table>
+			 
+	    </form>
+
+	    <div class="clear" style="height:20px;"></div>
+
+		<div style="text-align: left;">
+			<a id="restore" href="{% url 'auth:restore' %}">Напомнить пароль</a>
+			<br>
+			<br>
+			<a id="register" href="{% url 'auth:registration' %}">Зарегистрируйтесь</a> на сайте и получите возможность отслеживать ваши заказы в личном кабинете, и пользоваться системой накопительных скидок.
+		</div>
+    
+    <div class="clear" style="height:30px;"></div>
+    </div>
+    <div class="clear" style="height:450px"></div>
+    
+{% endblock %}	

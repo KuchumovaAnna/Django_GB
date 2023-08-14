@@ -1,0 +1,52 @@
+﻿{% extends 'authapp/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+	<title>{{block.super}} / {{title}} </title>
+{% endblock %}
+
+{% block meta %}
+<meta http-equiv="Content-Language" content="ru">
+<meta name="keywords" content="Вход">
+<meta name="description" content="Вход">
+{% endblock %}
+
+{% block css %}
+<link type="text/css" href="{% static 'css/common.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/fonts.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/basket.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block center %}
+<h1>Восстановление пароля</h1>
+	<div class="clear" style="height:10px;"></div>
+	<form action="#" method="post">
+		<table class="l-f-table" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;">
+			<tbody>
+                <tr>
+                    <td style="width:70px">{% csrf_token %}</td><td></td>
+                </tr>
+                <tr>
+				    <td class="label" style="width:70px;" nowrap="">E-mail:</td>
+				    <td class="field">
+					    <input type="text" name="email" value="">
+					    <i>
+						Введите в поле E-mail адрес электронной почты, который Вы указывали при регистрации. На него будет выслан код для смены пароля.
+					    </i>
+				    </td>
+			    </tr>
+                <tr>
+                    <td style="width:70px"></td>
+				    <td class="field" style="color:#{{color}}">{{message}}</td>
+			    </tr>
+
+			    <tr>
+				<td class="label"></td>
+				<td class="field" style="padding-top: 15px;">
+					<button type="submit">Выслать пароль</button>
+				</td>
+			</tr>
+		</tbody></table>
+	</form>	
+	<div class="clear" style="height:450px"></div>
+{% endblock %}	

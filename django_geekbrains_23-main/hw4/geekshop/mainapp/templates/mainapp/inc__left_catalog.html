@@ -1,0 +1,17 @@
+﻿<div id="left" class="wr-canvas">
+<div class="h-sep" style="margin:15px 0 15px 0;"></div>
+        <ul id="catalog-menu">
+        {% for category in categorylist %}
+        {% if category.0 is not None %}
+        <li><a href="#" style="color:#{{category.0.color}}">{{category.0.name}}</a>
+        <ul>
+        {% else %}
+        <li><a href="{% url 'catalog:catalog' %}{{category.1.parent_name.idx}}-{{category.1.idx}}/">{{category.1.name}}</a></li>
+        {% endif %}
+        {% if category.2 is True %}
+        </ul>				
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>			
+</div>

@@ -1,0 +1,120 @@
+#listForm, .basket_table {
+	width:100%;
+	margin:0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#listForm .specialTerm, .data-table .specialTerm, .simple_table .specialTerm{
+	font-style: italic;
+	color:red;
+	font-size:11px;
+	line-height: 13px;
+}
+
+.popup-prod-notice {
+	width: 200px;
+	border: 1px solid #ec1d17;
+	margin-top: 4px;
+	padding: 10px;
+	background: #FFF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	position: absolute;
+	display: none;
+}
+
+.popup-prod-notice .arrow {
+	padding: 5px 6px 5px 6px;
+	float:left;
+	margin: -17px 0 0 20px;
+	background: url('../pix/popup_red_v_arrow.gif') no-repeat 0px 0px;
+}
+
+a .popup-prod-notice * {color: #000; text-decoration: none !important;}
+a:hover .popup-prod-notice, .popup-prod-notice-row:hover .popup-prod-notice {display:block;}
+.popup-prod-notice .articul {font-size: 11px; color: #999;}
+.popup-prod-notice h5 {font-size: 14px; line-height: 20px; margin: 0;}
+.popup-prod-notice .descr {font-size: 11px; line-height: 14px;}
+
+.action_chain {
+	list-style-type: none;
+	display: block;
+	margin: 0;
+	padding: 0;
+	line-height: 16px;
+}
+
+.action_chain li {
+	float: left;
+	display: inline-block;
+	margin-right: 20px;
+}
+
+.action_chain li, .action_chain li * {
+	
+	font-size: 11px;
+	font-weight: normal;
+	color: #999;
+}
+
+.action_chain li b {
+	color: #ec1d17;
+}
+
+.action_chain li a {
+	text-decoration: none;
+	color: #000;
+}
+
+form div.info{
+	margin: 10px 0 10px 0;
+}
+
+
+#addForm table td{padding:10px 0 10px 0; border-bottom:1px solid #e3e3e3; font-size: 12px; color:#000;}
+#addForm table input{font-size: 14px; color:#000; height: 20px; width:30px;}
+.addToBasketResult #error{font-family:Georgia, Helvetica, sans-serif; font-style: italic; font-size: 14px; color:#da1212 !important; padding:15px 0px 10px 0px; text-align:center;}
+.addToBasketResult #success{font-family:Georgia, Helvetica, sans-serif; font-style: italic; font-size: 14px; color:#6cba12 !important; padding:30px 0px 30px 0px; text-align:center;}
+
+.person_type_selector {
+	float: left;
+	margin:0 0 0 -20px;
+	background-color: #eee;
+	width: 980px;
+}
+
+.person_type_selector div {margin: 15px 10px 15px 20px;}
+.person_type_selector * {float:left; margin-right: 10px;}
+.person_type_selector span {color: #999;}
+.person_type_selector span.separator {display: block; border-left: 1px solid black; width:1px;}
+
+#sendForm {width:100%; margin:0; padding: 0; font-family:Georgia, Helvetica, sans-serif;}
+table.sending{margin-top:5px;}
+
+#sendForm div.error{
+	color:#da1212;
+}
+
+h2.fail{
+	color:#da1212;
+	text-align: center;
+	font-size:16px;
+}
+
+h2.ok{
+	color:#6cba12;
+	text-align: center;
+	font-size:16px;
+}
+
+.popupContainer {margin-top:30px;}
+
+button#send_button{
+	float:left;
+}
+
+.money {
+	font-size: 14px; font-weight: bold;
+}

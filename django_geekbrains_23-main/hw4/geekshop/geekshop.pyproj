@@ -1,0 +1,362 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>geekshop</Name>
+    <RootNamespace>geekshop</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>c68f3b8b-7796-4593-a0f3-ea32790d9a6b</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>geekshop.settings</DjangoSettingsModule>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="authapp\admin.py" />
+    <Compile Include="authapp\apps.py" />
+    <Compile Include="authapp\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="authapp\migrations\__init__.py" />
+    <Compile Include="authapp\models.py" />
+    <Compile Include="authapp\tests.py" />
+    <Compile Include="authapp\urls.py" />
+    <Compile Include="authapp\views.py" />
+    <Compile Include="authapp\__init__.py" />
+    <Compile Include="basketapp\admin.py" />
+    <Compile Include="basketapp\apps.py" />
+    <Compile Include="basketapp\migrations\__init__.py" />
+    <Compile Include="basketapp\models.py" />
+    <Compile Include="basketapp\tests.py" />
+    <Compile Include="basketapp\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="basketapp\views.py" />
+    <Compile Include="basketapp\__init__.py" />
+    <Compile Include="geekshop\settings.py" />
+    <Compile Include="geekshop\urls.py" />
+    <Compile Include="geekshop\wsgi.py" />
+    <Compile Include="geekshop\__init__.py" />
+    <Compile Include="mainapp\admin.py" />
+    <Compile Include="mainapp\apps.py" />
+    <Compile Include="mainapp\templatetags\filter_utils.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mainapp\migrations\__init__.py" />
+    <Compile Include="mainapp\models.py" />
+    <Compile Include="mainapp\templatetags\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mainapp\tests.py" />
+    <Compile Include="mainapp\urls.py" />
+    <Compile Include="mainapp\views.py" />
+    <Compile Include="mainapp\__init__.py" />
+    <Compile Include="manage.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="authapp\templates\authapp\base.html" />
+    <Content Include="authapp\templates\authapp\inc__header.html" />
+    <Content Include="authapp\templates\authapp\login.html" />
+    <Content Include="authapp\templates\authapp\registration.html" />
+    <Content Include="authapp\templates\authapp\restore.html" />
+    <Content Include="basketapp\templates\basketapp\basket.html" />
+    <Content Include="basketapp\templates\index.html" />
+    <Content Include="mainapp\templates\mainapp\base.html" />
+    <Content Include="mainapp\templates\mainapp\catalog.html" />
+    <Content Include="mainapp\templates\mainapp\delivery.html" />
+    <Content Include="mainapp\templates\mainapp\help.html" />
+    <Content Include="mainapp\templates\mainapp\inc__left_catalog.html" />
+    <Content Include="mainapp\templates\mainapp\inc__header.html" />
+    <Content Include="mainapp\templates\mainapp\inc__smallbasket.html" />
+    <Content Include="mainapp\templates\mainapp\item.html" />
+    <Content Include="mainapp\templates\mainapp\main.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="static\admin\css\autocomplete.css" />
+    <Content Include="static\admin\css\base.css" />
+    <Content Include="static\admin\css\changelists.css" />
+    <Content Include="static\admin\css\dashboard.css" />
+    <Content Include="static\admin\css\fonts.css" />
+    <Content Include="static\admin\css\forms.css" />
+    <Content Include="static\admin\css\login.css" />
+    <Content Include="static\admin\css\responsive.css" />
+    <Content Include="static\admin\css\responsive_rtl.css" />
+    <Content Include="static\admin\css\rtl.css" />
+    <Content Include="static\admin\css\vendor\select2\LICENSE-SELECT2.md" />
+    <Content Include="static\admin\css\vendor\select2\select2.css" />
+    <Content Include="static\admin\css\vendor\select2\select2.min.css" />
+    <Content Include="static\admin\css\widgets.css" />
+    <Content Include="static\admin\fonts\LICENSE.txt" />
+    <Content Include="static\admin\fonts\README.txt" />
+    <Content Include="static\admin\fonts\Roboto-Bold-webfont.woff" />
+    <Content Include="static\admin\fonts\Roboto-Light-webfont.woff" />
+    <Content Include="static\admin\fonts\Roboto-Regular-webfont.woff" />
+    <Content Include="static\admin\img\calendar-icons.svg" />
+    <Content Include="static\admin\img\gis\move_vertex_off.svg" />
+    <Content Include="static\admin\img\gis\move_vertex_on.svg" />
+    <Content Include="static\admin\img\icon-addlink.svg" />
+    <Content Include="static\admin\img\icon-alert.svg" />
+    <Content Include="static\admin\img\icon-calendar.svg" />
+    <Content Include="static\admin\img\icon-changelink.svg" />
+    <Content Include="static\admin\img\icon-clock.svg" />
+    <Content Include="static\admin\img\icon-deletelink.svg" />
+    <Content Include="static\admin\img\icon-no.svg" />
+    <Content Include="static\admin\img\icon-unknown-alt.svg" />
+    <Content Include="static\admin\img\icon-unknown.svg" />
+    <Content Include="static\admin\img\icon-yes.svg" />
+    <Content Include="static\admin\img\inline-delete.svg" />
+    <Content Include="static\admin\img\LICENSE" />
+    <Content Include="static\admin\img\README.txt" />
+    <Content Include="static\admin\img\search.svg" />
+    <Content Include="static\admin\img\selector-icons.svg" />
+    <Content Include="static\admin\img\sorting-icons.svg" />
+    <Content Include="static\admin\img\tooltag-add.svg" />
+    <Content Include="static\admin\img\tooltag-arrowright.svg" />
+    <Content Include="static\admin\js\actions.js" />
+    <Content Include="static\admin\js\actions.min.js" />
+    <Content Include="static\admin\js\admin\DateTimeShortcuts.js" />
+    <Content Include="static\admin\js\admin\RelatedObjectLookups.js" />
+    <Content Include="static\admin\js\autocomplete.js" />
+    <Content Include="static\admin\js\calendar.js" />
+    <Content Include="static\admin\js\cancel.js" />
+    <Content Include="static\admin\js\change_form.js" />
+    <Content Include="static\admin\js\collapse.js" />
+    <Content Include="static\admin\js\collapse.min.js" />
+    <Content Include="static\admin\js\core.js" />
+    <Content Include="static\admin\js\inlines.js" />
+    <Content Include="static\admin\js\inlines.min.js" />
+    <Content Include="static\admin\js\jquery.init.js" />
+    <Content Include="static\admin\js\popup_response.js" />
+    <Content Include="static\admin\js\prepopulate.js" />
+    <Content Include="static\admin\js\prepopulate.min.js" />
+    <Content Include="static\admin\js\prepopulate_init.js" />
+    <Content Include="static\admin\js\SelectBox.js" />
+    <Content Include="static\admin\js\SelectFilter2.js" />
+    <Content Include="static\admin\js\timeparse.js" />
+    <Content Include="static\admin\js\urlify.js" />
+    <Content Include="static\admin\js\vendor\jquery\jquery.js" />
+    <Content Include="static\admin\js\vendor\jquery\jquery.min.js" />
+    <Content Include="static\admin\js\vendor\jquery\LICENSE-JQUERY.txt" />
+    <Content Include="static\admin\js\vendor\select2\i18n\ar.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\az.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\bg.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\ca.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\cs.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\da.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\de.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\el.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\en.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\es.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\et.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\eu.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\fa.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\fi.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\fr.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\gl.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\he.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\hi.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\hr.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\hu.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\id.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\is.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\it.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\ja.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\km.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\ko.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\lt.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\lv.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\mk.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\ms.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\nb.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\nl.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\pl.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\pt-BR.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\pt.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\ro.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\ru.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\sk.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\sr-Cyrl.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\sr.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\sv.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\th.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\tr.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\uk.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\vi.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\zh-CN.js" />
+    <Content Include="static\admin\js\vendor\select2\i18n\zh-TW.js" />
+    <Content Include="static\admin\js\vendor\select2\LICENSE-SELECT2.md" />
+    <Content Include="static\admin\js\vendor\select2\select2.full.js" />
+    <Content Include="static\admin\js\vendor\select2\select2.full.min.js" />
+    <Content Include="static\admin\js\vendor\xregexp\LICENSE-XREGEXP.txt" />
+    <Content Include="static\admin\js\vendor\xregexp\xregexp.js" />
+    <Content Include="static\admin\js\vendor\xregexp\xregexp.min.js" />
+    <Content Include="static\css\basket.css" />
+    <Content Include="static\css\common.css" />
+    <Content Include="static\css\facebox.css" />
+    <Content Include="static\css\fonts.css" />
+    <Content Include="static\css\lightbox.css" />
+    <Content Include="static\css\wish.css" />
+    <Content Include="media\previews\1627_preview.png" />
+    <Content Include="media\previews\1628_preview.png" />
+    <Content Include="media\previews\1629_preview.png" />
+    <Content Include="media\previews\2033_preview.png" />
+    <Content Include="media\previews\2034_preview.jpeg" />
+    <Content Include="media\previews\2039_preview.png" />
+    <Content Include="media\previews\2041_preview.jpeg" />
+    <Content Include="media\previews\2043_preview.png" />
+    <Content Include="media\previews\2050_preview.jpeg" />
+    <Content Include="media\previews\2051_preview.jpeg" />
+    <Content Include="media\previews\2052_preview.jpeg" />
+    <Content Include="media\previews\2057_preview.jpeg" />
+    <Content Include="media\previews\2058_preview.jpeg" />
+    <Content Include="media\previews\2061_preview.png" />
+    <Content Include="media\previews\2063_preview.png" />
+    <Content Include="media\previews\2073_preview.png" />
+    <Content Include="media\previews\2759_preview.jpeg" />
+    <Content Include="media\previews\2823_preview.jpeg" />
+    <Content Include="media\previews\3931_preview.png" />
+    <Content Include="media\previews\3932_preview.jpeg" />
+    <Content Include="media\previews\3933_preview.jpeg" />
+    <Content Include="media\previews\3934_preview.jpeg" />
+    <Content Include="media\previews\3939_preview.jpeg" />
+    <Content Include="media\previews\3943_preview.jpeg" />
+    <Content Include="media\previews\4427_preview.jpeg" />
+    <Content Include="media\previews\4750_preview.jpeg" />
+    <Content Include="media\previews\4824_preview.jpeg" />
+    <Content Include="media\previews\5077_preview.jpeg" />
+    <Content Include="media\previews\5083_preview.jpeg" />
+    <Content Include="media\previews\5087_preview.jpeg" />
+    <Content Include="media\previews\5088_preview.jpeg" />
+    <Content Include="media\previews\5091_preview.jpeg" />
+    <Content Include="media\previews\5094_preview.jpeg" />
+    <Content Include="media\previews\5096_preview.jpeg" />
+    <Content Include="media\previews\5097_preview.jpeg" />
+    <Content Include="static\img\87.gif" />
+    <Content Include="static\img\banner-shipping.jpg" />
+    <Content Include="static\img\banner2.jpg" />
+    <Content Include="static\img\chipster_logo.png" />
+    <Content Include="static\img\closelabel.gif" />
+    <Content Include="static\img\items\1089_preview_big.jpeg" />
+    <Content Include="static\img\items\1326_preview.png" />
+    <Content Include="static\img\items\1507_preview.jpeg" />
+    <Content Include="static\img\items\1634_preview.jpeg" />
+    <Content Include="static\img\items\1644_preview.jpeg" />
+    <Content Include="static\img\items\174_preview.jpeg" />
+    <Content Include="static\img\items\2035_preview.jpeg" />
+    <Content Include="static\img\items\2044_preview.jpeg" />
+    <Content Include="static\img\items\2048_preview.jpeg" />
+    <Content Include="static\img\items\2136_preview_big.jpeg" />
+    <Content Include="static\img\items\2137_preview_big.jpeg" />
+    <Content Include="static\img\items\2583_preview.jpeg" />
+    <Content Include="static\img\items\2776_preview.jpeg" />
+    <Content Include="static\img\items\3218_preview.jpeg" />
+    <Content Include="static\img\items\3255_preview.jpeg" />
+    <Content Include="static\img\items\3955_preview.png" />
+    <Content Include="static\img\loading.gif" />
+    <Content Include="static\items\items.json" />
+    <Content Include="static\js\basket_scripts.js" />
+    <Content Include="static\js\conversion_async.js" />
+    <Content Include="static\js\ga.js" />
+    <Content Include="static\js\jquery-3.3.1.min.js" />
+    <Content Include="static\js\jquery.min.js" />
+    <Content Include="static\js\js" />
+    <Content Include="static\js\watch.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="authapp\" />
+    <Folder Include="authapp\migrations\" />
+    <Folder Include="basketapp\" />
+    <Folder Include="basketapp\migrations\" />
+    <Folder Include="basketapp\templates\" />
+    <Folder Include="basketapp\templates\basketapp\" />
+    <Folder Include="migrations\" />
+    <Folder Include="authapp\templates\" />
+    <Folder Include="authapp\templates\authapp\" />
+    <Folder Include="mainapp\" />
+    <Folder Include="mainapp\migrations\" />
+    <Folder Include="mainapp\templatetags\" />
+    <Folder Include="media\big_img\" />
+    <Folder Include="media\previews\" />
+    <Folder Include="mainapp\templates\" />
+    <Folder Include="mainapp\templates\mainapp\" />
+    <Folder Include="media\" />
+    <Folder Include="geekshop\" />
+    <Folder Include="static\" />
+    <Folder Include="static\admin\" />
+    <Folder Include="static\admin\css\" />
+    <Folder Include="static\admin\css\vendor\" />
+    <Folder Include="static\admin\css\vendor\select2\" />
+    <Folder Include="static\admin\fonts\" />
+    <Folder Include="static\admin\img\" />
+    <Folder Include="static\admin\img\gis\" />
+    <Folder Include="static\admin\js\" />
+    <Folder Include="static\admin\js\admin\" />
+    <Folder Include="static\admin\js\vendor\" />
+    <Folder Include="static\admin\js\vendor\jquery\" />
+    <Folder Include="static\admin\js\vendor\select2\" />
+    <Folder Include="static\admin\js\vendor\select2\i18n\" />
+    <Folder Include="static\admin\js\vendor\xregexp\" />
+    <Folder Include="static\css\" />
+    <Folder Include="static\fonts\" />
+    <Folder Include="static\img\" />
+    <Folder Include="static\img\items\" />
+    <Folder Include="static\js\" />
+    <Folder Include="static\items\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,73 @@
+﻿{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+	<title>{{block.super}} / {{title}} </title>
+{% endblock %}
+
+{% block css %}
+<link type="text/css" href="{% static 'css/common.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/fonts.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/basket.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/lightbox.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/facebox.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/wish.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block center %}
+<div id="center">
+
+<div class="product-item wr-canvas">
+		<div class="clear"></div>
+			
+	<h1>"{{ item.name }}"</h1>
+	<div id="product-image">
+	    <div class="image">
+			<a href="#" target="_blank" rel="lightbox"><img src="/media/{{item.img_big}}" alt="{{ item.short_desc }}" title="{{ item.short_desctitle }}"></a>
+				</div>
+				</div>
+							
+		<div class="item-controls">
+			<div class="controls">
+				<span class="articul">Артикул: <b>{{item.vendor_code}}</b></span>
+
+				<div class="price">
+					<span class="price-num">{{ item.find_last_price.price }}</span>
+					<span class="price-unit">{{ item.find_last_price.price_unit }}</span>
+				</div>
+				{% include 'mainapp/inc__smallbasket.html' %}
+			</div>
+
+			<script>
+				addLoadEvent(function(){
+					new AddBasketForm($('addForm'), $('count'));
+				});
+			</script>
+							
+			<script>
+				addLoadEvent(function(){
+					new iWish($('wish-button'), '/wish-list/worker.html', 5097);
+				});
+			</script>
+
+			<div class="clear"></div>
+
+			<div class="buy-conditions">
+			<span class="avl"><b></b> <span>есть в наличии</span></span>
+									
+			</div>
+		</div>
+
+		<div class="clear" style="height: 10px;"></div>
+
+<div class="description">
+<h2>Описание</h2>
+{{ description.description|safe}}
+</div>
+		
+</div>
+</div>
+
+
+{% endblock %}

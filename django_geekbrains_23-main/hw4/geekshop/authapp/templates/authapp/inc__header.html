@@ -1,0 +1,47 @@
+﻿{% load staticfiles %}
+{% load filter_utils %}
+
+<div class="bar">
+	<ul class="top-menu">
+    <li><a href="{% url 'main' %}">Главная страница</a></li>
+	<li><a href="{% url 'delivery' %}">Доставка</a></li>
+	<li><a href="{% url 'help' %}">Помощь</a></li><li>
+    </ul>
+
+	
+<div class="clear"></div>
+</div>
+		
+<a id="logo" href="{% url 'main' %}" title="Интернет-магазин радиодеталей почтой">
+<img src="{% static 'img/chipster_logo.png' %}" title="Интернет-магазин радиодеталей почтой" alt="Интернет-магазин радиодеталей почтой"></a>
+<form id="search" action="#" method="GET">
+	<div class="query-field">
+		<input id="AjaxSearchInput" type="text" name="q" autocomplete="off" placeholder="Найти что нибудь интересное" maxlength="100" value="">
+		<div id="AjaxSearchResult" style="display:none;"></div>
+	</div>
+	<button class="search-button" type="submit">Найти</button>
+</form>
+
+<script>
+	addLoadEvent(function(){
+		initSearch(
+			$("AjaxSearchInput"),
+			$("AjaxSearchResult"),
+			'/ajax-search.html'
+		);
+	});
+</script>
+			
+<div id="phone">
+	<b>8 (499) 999-88-77</b>
+	<b>8 (499) 666-55-44</b>
+	<span>Пн-Вс: 00:01-23:59</span>
+</div>
+
+<script>
+	addLoadEvent(function(){
+		new BasketViewer();
+	});
+</script>
+
+		

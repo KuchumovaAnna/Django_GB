@@ -1,0 +1,155 @@
+﻿{% load staticfiles %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	{% block title %}
+	Интернет-магазин радиодеталей
+	{% endblock %}
+
+    {% block meta %}
+	<meta http-equiv="Content-Language" content="ru">
+	<meta name="keywords" content="Электронные модули и Arduino, электронные компоненты, радиодетали, все для радиолюбительства, микросхемы, транзисторы, диоды, мосты, стабилитроны, конденсаторы, резисторы, индуктивности, дроссели, светодиоды, семисегментные индикаторы, дисплеи, датчики, ре">
+	<meta name="description" content="Розничная продажа электронных наборов и конструкторов, ардуино  и модулей, микрокомпьютеров Raspberry PI, электронных компонентов и радиодеталей, светодиодов, лазерных модулей, Расходных материалов, химии и паяльных флюсов, кабельной продукци">
+    {% endblock %}
+
+    {% block css %}
+	<link type="text/css" href="{% static 'css/common.css' %}" rel="stylesheet">
+	<link type="text/css" href="{% static 'css/fonts.css' %}" rel="stylesheet">
+	<link type="text/css" href="{% static 'css/basket.css' %}" rel="stylesheet">
+	{% endblock %}
+	
+    {% block js %}
+	<script type="text/javascript" async="" src="{% static 'js/watch.js' %}"></script>
+	<script type="text/javascript" async="" src="{% static 'js/conversion_async.js' %}"></script>
+	<script type="text/javascript" async="" src="{% static 'js/ga.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    {% endblock %}
+
+    {% block head_script %}
+    <script>
+	    window.dataLayer = window.dataLayer || []; 
+	    function gtag(){
+		    dataLayer.push(arguments);
+	    } 
+	    gtag('js', new Date()); 
+	    gtag('config', 'AW-1017780836');
+    </script>
+    <script> 
+	    gtag('event', 'page_view', { 
+		    'send_to': 'AW-1017780836', 
+		    'ecomm_pagetype': 'home', 
+		    'ecomm_prodid': [], 
+		    'ecomm_totalvalue': 0.00 
+	    }); 
+    </script>
+    {% endblock %}
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="header">
+            {# header from inc__header.html #}
+            {% include 'mainapp/inc__header.html' %}
+		</div>
+		
+		<div class="clear"></div>
+
+    {# top-menu from inc__left_catalog.html #}
+    {% include 'mainapp/inc__left_catalog.html' %}
+
+    {% block center %}
+	<div id="center">
+	</div>
+    {% endblock %}
+
+    <div class="clear" style="height:450px"></div>
+    </div>
+    {% block footer %}
+	<div id="footer">
+		<div class="h-sep"></div>
+
+
+<div class="h-sep"></div>
+
+<div class="footer-content">
+	<div class="footer-title upcase-monster-size">Способы доставки</div>
+	<table class="delivery-line">
+		<tbody><tr>
+			<td style="width:202px;">
+				<span class="icon rp"></span>
+				<span class="title">Доставка<br>Почтой России</span>
+			</td>
+			<td style="width:202px;">
+				<span class="icon courier"></span>
+				<span class="title" style="margin-top:12px;">Доставка<br>курьером<br>в 23 городах</span>
+			</td>
+			<td style="width:202px;">
+				<span class="icon pvz"></span>
+				<span class="title" style="margin-top:12px;">Доставка<br>в пункты выдачи<br>в 17 городах</span>
+			</td>
+			<td style="width:200px;">
+				<span class="icon pickup"></span>
+				<span class="title" style="margin-top:12px;">Самовывоз<br>со склада<br>м. Войковская</span>
+			</td>
+			<td style="width:174px;">
+				<span class="icon cse"></span>
+				<span class="title">Экспресс<br>доставка CSE</span>
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+
+<div class="h-sep"></div>
+
+<div class="nav-wrap">
+	<ul class="footer-nav">
+		<li class="block" style="width: 200px;">
+			<h5>Информация</h5>
+			<ul>
+				<li><a href="{% url 'delivery' %}">Доставка</a></li>
+			</ul>
+		</li>
+
+		<li class="block">
+			<h5>Безналичная оплата</h5>
+			<form class="quick-pay" id="quickPayOrderForm">
+				<b>Введите номер заказа:</b>
+				<input type="text" name="order_id">
+				<button type="submit">Оплатить</button>
+				<div class="clear"></div>
+			</form>
+			<i class="info" style="text-align: left;padding:10px 0 7px 0;display:block;">Оплата с помощью электронных денег и <br>пластиковых карт</i>
+			<a href="#" class="wm-accept">&nbsp;</a>
+		</li>
+
+		<li class="block" style="float:right;">
+			<h5>Контакты</h5>
+			<div class="phone-number">8 (499) 999-88-77</div>
+			<div class="address">г. Москва, ул. Владислава Пупкина д. math.exp(sin(x))</div>
+			<div class="mailto">E-mail: <a href="mailto:email@email.ru">email@email.ru</a></div>
+			<div class="copy">© ХХХ.RU 2018 - магазин электронных компонентов и <br>оборудования. Доставка по всей России.</div><br>
+		</li>
+	</ul>
+</div>
+
+<script>
+	addLoadEvent(function(){
+		new OrderQuickPay('quickPayOrderForm', '/my/qpay.html');
+	});
+</script>
+	</div>
+    {% endblock %}
+
+    {% block notifier %}
+    <div id="notifier" class="notifier" style="display: none;">
+			    <div class="close"></div>
+			    <div class="title"></div>
+			    <div class="text"></div></div>
+			    <div class="modal-fade" style="display: none;"></div>
+			    <div id="PopupWindow_059865" class="popup-window quick-pay-popup" style="display: none; width: 430px; height: auto;"><div class="close"></div>
+			    <h1 class="title" style="display: none;"></h1><div class="errors" style="display: none;"></div><div class="in"><div class="bills"></div></div></div>
+	{% endblock %}	
+
+</body>
+</html>

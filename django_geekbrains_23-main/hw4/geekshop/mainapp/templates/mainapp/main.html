@@ -1,0 +1,95 @@
+﻿{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+{% load filter_utils %}
+
+{% block title %}
+	<title>{{block.super}} / {{title}} </title>
+{% endblock %}
+
+
+{% block center %}
+	<div id="center">
+		<div id="banner">
+			<ul id="slider" class="slider">
+				<li class="frame" style="z-index: 0;"><a style="border: 1px solid #e5e5e5;" href="{% url 'main' %}"><img src="{% static 'img/banner-shipping.jpg' %}" alt="Доставка радиодеталей курьером"></a></li>
+				<li class="frame" style="z-index: 0; opacity: 0;"><a href="#"><img src="{% static 'img/banner2.jpg' %}" alt="Системы хранения"></a></li>
+			</ul>
+		</div>
+	<div id="banner-buttons" class="frame-buttons-wrap">
+		<ul class="frame-buttons" id="banner-buttons-list"><li class="active"><div class="frame-dot"></div></li><li class=""><div class="frame-dot"></div></li></ul>
+	</div>
+
+<script>
+addLoadEvent(function(){
+	new Slider('#banner>.slider>li', {useButtons: true, buttonContainer: $('banner-buttons-list'), delay: 10000});
+});
+</script>
+
+    <h2 style="float:left;">Горячее предложение</h2>
+	<ul class="product-list" id="catalogList">
+		<li>
+			<a class="product-image" href="{% url 'catalog:catalog' %}{{hotitem.category.parent_name.idx}}-{{hotitem.category.idx}}/{{hotitem.vendor_code}}">
+				<div class="preview-wrap">
+					<img src="/media/{{hotitem.img_small}}" alt="{{hotitem.name}}" title="{{hotitem.name}}">
+				</div>
+			</a>
+			<div class="info">
+				<h3><a href="{% url 'catalog:catalog' %}{{hotitem.category.parent_name.idx}}-{{hotitem.category.idx}}/{{hotitem.vendor_code}}">{{hotitem.name}}</a></h3>
+				<a href="{% url 'catalog:catalog' %}{{hotitem.category.parent_name.idx}}-{{hotitem.category.idx}}/{{hotitem.vendor_code}}" class="descr">
+					 {{hotitem.short_desc}}<br /></a>
+				<span class="articul">Артикул: <b>{{hotitem.vendor_code}}</b></span>
+				
+			</div>
+			<div class="controls">
+				<div class="price">
+					<span class="price-num">{{hotitem.find_last_price.price}}</span>
+					<span class="price-unit">{{hotitem.find_last_price.price_unit}}</span>
+				</div>
+				{% include 'mainapp/inc__smallbasket.html' with item=hotitem %}
+
+			</div>
+            
+		</li>
+	</ul>
+
+	<h2 style="float:left;">Новые поступления</h2>
+	<ul class="product-grid">
+		{% for item in items %}
+			<li>
+			<a class="product-image" href="{% url 'catalog:catalog' %}{{item.category.parent_name.idx}}-{{item.category.idx}}/{{item.vendor_code}}">
+				<div class="preview-wrap">
+					<img src="/media/{{item.img_small}}" alt="{{item.name}}" title="{{item.name}}">
+				</div>
+			</a>
+			<div class="info">
+				<h3><a href="{% url 'catalog:catalog' %}{{item.category.parent_name.idx}}-{{item.category.idx}}/{{item.vendor_code}}">{{item.name}}</a></h3>
+				<a href="{% url 'catalog:catalog' %}{{item.category.parent_name.idx}}-{{item.category.idx}}/{{item.vendor_code}}" class="descr">{{item.short_desc}}</a>
+				<span class="articul">Артикул: <b>{{item.vendor_code}}</b></span>
+				                        {% if item.instock %}
+                                        <span class="avl"><b></b> <span>
+										есть в наличии
+										{% else %}
+                                        <span class="navl"><b></b> <span>
+										нет в наличии
+										{% endif %}
+							 </span></span>
+							</div>
+			
+			<div class="controls">
+				
+				<div class="price">
+					<span class="price-num">{{item.find_last_price.price}}</span>
+					<span class="price-unit">{{item.find_last_price.price_unit}}</span>
+				</div>
+			
+				{% include 'mainapp/inc__smallbasket.html' %}
+
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+	<div class="clear" style="height:20px;"></div>
+
+		</div>
+{% endblock %}
+
