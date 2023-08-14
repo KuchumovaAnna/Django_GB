@@ -1,0 +1,60 @@
+{
+  "ParentCategory": [
+    {
+      "name": "Ардуино и модули",
+      "idx": 2,
+      "color": "019d9b"
+    },
+    {
+      "name": "Электронные компоненты и радиодетали",
+      "idx": 3,
+      "color": "ff4200"
+    },
+    {
+      "name": "Робототехника",
+      "idx": 4,
+      "color": "a70192"
+    }
+  ],
+  "ItemCategory": [
+    {
+      "name": "Arduino",
+      "idx": 1,
+      "parent_name_id": 2
+    },
+    {
+      "name": "Arduino наборы",
+      "idx": 2,
+      "parent_name_id": 2
+    },
+    {
+      "name": "Шилды",
+      "idx": 3,
+      "parent_name_id": 2
+    },
+    {
+      "name": "Резисторы",
+      "idx": 1,
+      "parent_name_id": 3
+    },
+    {
+      "name": "Транзисторы",
+      "idx": 2,
+      "parent_name_id": 3
+    },
+    {
+      "name": "Конденсаторы",
+      "idx": 4,
+      "parent_name_id": 3
+    },
+    {
+      "name": "Катушки индуктивности",
+      "idx": 3,
+      "parent_name_id": 3
+    },
+    {
+      "name": "Платформы, шасси, готовые, узлы",
+      "idx": 1,
+      "parent_name_id": 4
+    }]
+}

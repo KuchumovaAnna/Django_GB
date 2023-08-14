@@ -1,0 +1,79 @@
+﻿{% extends 'authapp/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+	<title>{{block.super}} / {{title}} </title>
+{% endblock %}
+
+{% block meta %}
+<meta http-equiv="Content-Language" content="ru">
+<meta name="keywords" content="Вход">
+<meta name="description" content="Вход">
+{% endblock %}
+
+{% block css %}
+<link type="text/css" href="{% static 'css/common.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/fonts.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/basket.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+{% block center %}
+	<div class="clear"></div>
+	<div id="dual" class="wr-canvas">
+	<h1>Регистрация</h1>
+		<form class="registration" id="regForm"  method="post">
+			<table class="l-f-table" cellpadding="0" cellspacing="0" border="0">
+			<tr><td style="width:120px">{% csrf_token %}</td></tr>
+			{% for item in register_form %}
+			<tr>
+			<td style="width:300px">{% if item.name in not_empty_list %}*{% endif %}{{item.label}}</td>
+			<td class="field">{{item}}
+
+				{% for error in item.errors %}
+                    {% if forloop.first %}
+                    </td>
+                    <tr><td></td>
+                    <td>
+                    {% endif %}
+
+                    {% if forloop.last %}
+                    
+                    {% endif %}
+
+					<li style="color:#ff0000">{{ error|escape }}</li>
+				{% endfor %}
+				
+			{%endfor%}
+			</td>
+            </tr>
+            <tr>
+			<td class="field" style="padding-top: 20px;"><button type="submit" name="reg">Отправить</button></td>
+            <tr>
+			</table>
+            <i>* - поля, обязательные для заполнения</i>
+		</form>
+       
+		<form class="registration" id="genForm" method="post">
+			<table class="l-f-table" cellpadding="0" cellspacing="0" border="0">
+			<tr><td style="width:120px">{% csrf_token %}</td>
+                <td style="width:240px"></td>
+                <td></td>
+                </tr>
+            <tr>
+			<td style="padding-top: 0px;">{{ gen_form.newpass.label }}</td>
+            <td class="field" style="width:80px">{{ gen_form.newpass }}</td>
+			<td class="field" style="padding-top: 0px;"> 
+                <button name="gen">Сгенерировать данные</button>
+            </td>
+            </tr>
+			</table>
+		</form>
+
+		
+	<div class="clear" style="height: 20px;"></div>
+	</div>
+	<div class="clear" style="height:450px"></div>
+{% endblock %}	

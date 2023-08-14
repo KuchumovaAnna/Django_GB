@@ -1,0 +1,96 @@
+﻿{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+{% load filter_utils %}
+
+{% block title %}
+	<title>{{block.super}} / {{title}} </title>
+{% endblock %}
+
+{% block css %}
+<link type="text/css" href="{% static 'css/common.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/fonts.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/basket.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/lightbox.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/facebox.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/wish.css' %}" rel="stylesheet">
+{% endblock %}
+	
+{% block center %}
+	<div id="center">
+
+			<div id="path-menu">
+			<a href="{% url 'main' %}" class="home"></a>
+                <a href="{% url 'catalog:catalog' %}">Каталог</a>
+					<b>→</b><a href="{% url 'catalog:catalog' %}{{category.parent_name.idx}}-{{category.idx}}/">{{category.parent_name.name}}</a>
+					<b>→</b><a href="{% url 'catalog:catalog' %}{{category.parent_name.idx}}-{{category.idx}}/">{{category.name}}</a>
+							</div>
+		<div class="clear"></div>
+		
+	<div class="clear" style="height: 10px"></div>
+
+	<div class="catalog-bar bar">
+		<h2>{{category.name}}</h2>	
+		
+		<div id="listViewIcon" class="icon-active right"><span class="list"></span></div>
+		<div id="gridViewIcon" class="icon"><span class="grid"></span></div>
+		<div class="sorting">
+	{#<span class="label">Сортировать по</span>
+	<b class="drop-down-button">наличию<span class="arrow">⬇</span>
+	<ul>
+        <li><a href="https://chipster.ru{% url 'catalog:catalog' %}kits/arduino-kits/?sort=n">названию</a></li>
+		<li><span>наличию</span></li>
+		<li><a href="https://chipster.ru{% url 'catalog:catalog' %}kits/arduino-kits/?sort=pd">цене							Z-a						</a></li>
+		<li><a href="https://chipster.ru{% url 'catalog:catalog' %}kits/arduino-kits/?sort=pa">цене							a-Z						</a></li>
+	</ul>
+	</b>#}
+</div>	
+</div>
+
+	<ul class="product-list" id="catalogList">
+        {% for item in items %}
+		<li>
+            
+			<a class="product-image" href="{% url 'catalog:catalog' %}{{item.category.parent_name.idx}}-{{item.category.idx}}/{{item.vendor_code}}">
+				<div class="preview-wrap">
+					<img src="/media/{{item.img_small}}" alt="{{item.name}}" title="{{item.name}}">
+				</div>
+			</a>
+			<div class="info">
+				<h3><a href="{% url 'catalog:catalog' %}{{item.category.parent_name.idx}}-{{item.category.idx}}/{{item.vendor_code}}">{{item.name}}</a></h3>
+				<a href="{% url 'catalog:catalog' %}{{item.category.parent_name.idx}}-{{item.category.idx}}/{{item.vendor_code}}" class="descr">
+					 {{item.short_desc}}<br /></a>
+				<span class="articul">Артикул: <b>{{item.vendor_code}}</b></span>
+				
+									<span class="avl"><b></b> <span>есть в наличии</span></span>
+							</div>
+			<div class="controls">
+				<div class="price">
+					<span class="price-num">{{item.find_last_price.price}}</span>
+					<span class="price-unit">{{item.find_last_price.price_unit}}</span>
+				</div>
+				{% include 'mainapp/inc__smallbasket.html' %}
+
+			</div>
+            
+		</li>
+        {% endfor %}
+	</ul>
+
+	<script>
+		addLoadEvent(function(){
+			initCatalogBar(
+				$("listViewIcon"),
+				$("gridViewIcon"),
+				$("catalogList"),
+				'products'
+			);
+		});
+	</script>
+
+	<div class="clear"></div>
+	
+	
+		</div>
+{% endblock %}
+
+

@@ -1,0 +1,111 @@
+﻿{% extends 'authapp/base.html' %}
+{% load staticfiles %}
+{% load filter_utils %}
+
+{% block title %}
+	<title>{{block.super}} / {{title}} </title>
+{% endblock %}
+
+{% block meta %}
+<meta http-equiv="Content-Language" content="ru">
+<meta name="keywords" content="Вход">
+<meta name="description" content="Вход">
+{% endblock %}
+
+{% block css %}
+<link type="text/css" href="{% static 'css/common.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/fonts.css' %}" rel="stylesheet">
+<link type="text/css" href="{% static 'css/basket.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/basket_scripts.js' %}"></script>
+{% endblock %}
+
+
+{% block center %}	
+<div id="dual" class="wr-canvas">
+			
+    {% if user is not False %}
+    {% if inBasket.count == 0 %}
+        <div class="clear" style="height:15px;"></div>
+        <b>В корзине сейчас ничего нет :(</b>
+        <p>Если Вы заполняли корзину в другом браузере или с другого компьютера, Вам достаточно авторизоваться и корзина вернется к прежнему состоянию.</p>
+        </div>
+    {% else %}
+    <h1>Редактирование заказа</h1>
+
+	<div class="clear" style="height:15px;"></div>
+	<div class="basket_table">
+	    <form id="listForm" method="POST" action="{% url 'basket:buy' %}">
+            {% csrf_token %}
+		    <table cellpadding="0" cellspacing="0" class="data-table" border="0">
+			    <tbody>
+                <tr>
+				    <th style="width:100%;">Название</th>
+				    <th style="width:90px; text-align: right;" nowrap="">Наличие</th>
+				    <th style="width:90px; text-align: right;" nowrap="">Цена</th>
+				    <th style="width:60px;" nowrap="">Кол-во</th>
+				    <th style="width:90px; text-align: right;" nowrap="">Сумма</th>
+				    <th width="60"></th>
+			    </tr>
+                {% for basket_item in inBasket %}
+			    <tr>
+					    <td class="popup-prod-notice-row">
+						    <a href="{% url 'catalog:catalog' %}{{basket_item.item.category.parent_name.idx}}-{{basket_item.item.category.idx}}/{{basket_item.item.vendor_code}}">
+							    {{basket_item.item.name}}
+                                <div class="popup-prod-notice">
+								    <div class="arrow"></div>
+								    <span class="articul">Артикул: <b>{{basket_item.item.vendor_code}}</b></span>
+								    <h5>{{basket_item.item.name}}</h5>
+								    <img src="/media/{{basket_item.item.img_small}}">
+								    <div class="descr">{{basket_item.item.short_desc}}</div>
+							    </div>
+						    </a>
+					    <div class="specialTerm">На этот товар не распространяется скидка и условия бесплатной доставки</div>							
+					    </td>
+					    <td style="text-align: right;" nowrap="">в наличии</td>
+					    <td style="text-align: right;" nowrap="">{{basket_item.price}}</td>
+					    <td><input rel="countField" type="number" min="0" name="count__{{basket_item.item.vendor_code}}" value="{{basket_item.quantity}}" style="width:30px;"></td>
+					    <td style="text-align: right;" nowrap="">
+						    <span rel="amount">{{basket_item.item_total_price}}</span>
+						    <input type="hidden" rel="priceField" value="{{basket_item.price}}">
+					    </td>
+
+					    <td class="remove-button"><a rel="dropButton" href="{% url 'basket:del' basket_item.item.vendor_code %}">Удалить</a></td>
+				    </tr>
+			    {% endfor %}
+			    </tbody>
+                <tfoot>
+				    <tr>
+					    <td colspan="2"><b>Итог:</b></td>
+                         <td></td>
+					    <td nowrap=""><b><span id="resultCount">{{total_quantity}}</span></b></td>
+					    <td style="text-align: right;" nowrap=""><b><span id="resultAmount">{{total_price}}</span></b></td>
+					    <td></td>
+				    </tr>
+			    </tfoot>
+            
+		    </table>
+
+		
+		    <div class="clear" style="height:30px;"></div>
+		    <div style="text-align: left;">
+			    <button type="submit" name="save">Сохранить изменения</button>
+			    <button type="submit" name="saveAndSend" id="saveAndSend" style="margin-left:20px;">Оформить заказ</button>
+		    </div>
+		    <div class="clear" style="height:30px; margin-top: 20px;">
+			    <label>
+				    <input value="1" name="confirm_personal_data" id="confirm_personal_data" type="checkbox" checked="checked">
+				    Я подтверждаю согласие на обработу персональных данных в соответствии с <a href="https://chipster.ru/documents/152fz">пользовательским соглашением</a>.
+			    </label>
+		    </div>
+	    </form>
+    </div>
+<div class="clear" style="height:250px;"></div>
+</div>
+    {% endif %}
+    {% endif %}
+{% endblock %}	
+		

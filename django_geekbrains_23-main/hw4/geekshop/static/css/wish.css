@@ -1,0 +1,134 @@
+.wish-popup .wish-form {
+	padding: 0px;
+	margin: 0px;
+	display: block;
+	text-align: left;
+}
+
+.wish-popup .wish-form input[type="text"] {
+	display: block;
+	margin-bottom: 10px;
+	padding-left: 5px;
+	width: 100%;
+}
+
+.wish-popup .wish-form label {
+	display: block;
+	margin-bottom: 20px;
+	clear: both;
+	font-style: italic;
+}
+
+.wish-popup .wish-form button {
+	margin-right: 15px;
+}
+
+.wish-popup a.wl-add, .wish-popup a.wl-remove {
+	color: #ec1d17;
+	font-size: 14px;
+	line-height: 16px;
+	display: inline-block;
+	padding: 4px 3px 2px 3px;
+	margin: 2px;
+}
+
+.wish-popup a.wl-remove {
+	padding-right: 15px;
+	color: #fff !important;
+	background: #aaa url('../img/close-icon-3.gif') no-repeat center right;
+	-moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;
+	text-decoration: none;
+}
+
+.wish-popup a.wl-add:hover {
+	color: #fff !important;
+	text-decoration: none;
+	background: #ec1d17;
+	-moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;
+}
+
+.wish-popup a.wl-remove:hover {
+	background: #888 url('../img/close-icon-3.gif') no-repeat center right;
+}
+
+.wish-list-menu {
+	margin: 20px 0 10px 0;
+}
+
+.wish-list-menu a, .wish-list-menu span {
+	font-size: 11px;
+	display: inline-block;
+	margin-right: 10px;
+	padding: 5px 8px 4px 8px;
+	color: #fff !important;
+	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+}
+
+.wish-list-menu a {
+	border: 1px solid #ec1d17;
+	background: #ec1d17;
+}
+
+.wish-list-menu span {
+	background: #999;
+	border: 1px solid #999;
+}
+
+.wish-list-menu a:hover {
+	background: #ec1d17;
+	text-decoration: none;
+}
+
+ul.public-wish-lists {
+	list-style-type: none;
+	margin:0 -30px 0 0;
+	padding:0;
+	text-align: left;
+}
+
+ul.public-wish-lists li {
+	display: inline-block;
+	padding: 0;
+	margin: 0 25px 0 0;
+	width: 210px;
+	height: 150px;
+}
+
+ul.public-wish-lists .previews {
+	display: inline-block;
+	border: 1px solid #eee;
+	text-align: center;
+	width: 210px;
+	height: 70px;
+	text-decoration: none;
+}
+
+ul.public-wish-lists .previews div {
+	display: table-cell;
+	width: 55px;
+	height: 55px;
+	padding: 5px;
+	text-align: center;
+	overflow: hidden;
+}
+
+ul.public-wish-lists .previews img {
+	width: 60px;
+	max-height: 60px;
+}
+
+ul.public-wish-lists .date, ul.public-wish-lists .qty {
+	display: inline-block;
+	margin-right: 10px;
+	color: #666;
+	font-size: 11px;
+}
+
+ul.public-wish-lists .qty {
+	clear: right;
+}
+
+ul.public-wish-lists a.title {
+	display: inline-block;
+	margin-top: 5px;
+}

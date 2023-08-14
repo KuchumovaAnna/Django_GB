@@ -1,0 +1,10 @@
+﻿<div class="buy">
+	<form class="addForm" method="POST" action="{% url 'basket:add' %}">
+		<div class="qty">
+            {% csrf_token %}
+			<input type="number" min="0" class="add_count" value="1" name="count">
+            <input type="hidden" name="vendor_code" value={{item.vendor_code}}>
+		</div>
+		<button type="submit">Купить</button>
+	</form>
+</div>

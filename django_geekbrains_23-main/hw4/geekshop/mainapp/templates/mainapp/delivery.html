@@ -1,0 +1,64 @@
+﻿{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+	<title>{{block.super}} / {{title}} </title>
+{% endblock %}
+
+{% block center %}
+		<div id="center">
+
+	    <div class="text wr-canvas">
+		    <h1>Доставка</h1>
+		
+		    <h4 style="color:red;">Внимание! Бесплатная доставка заказов от 5000.00 р. действует только в случае отправки посылок Почтой России на территории РФ и посылок предназначенных для самовывоза из ПУНКТОВ ВЫДАЧИ IML.</h4>
+    <p>Мы осуществляем доставку из Москвы в любой город на территории России.&nbsp;</p>
+    <h2><a name="RP"></a>Доставка&nbsp; Почтой России</h2>
+    <p><img src="{% static 'img/87.gif' %}"></p>
+    <h3>Стоимость:</h3>
+    <ul>
+    <li>При заказе от 5000.00 руб доставка по почте осуществляется <span style="text-decoration: underline;">бесплатно</span>.&nbsp;</li>
+    <!--li>При оплате "наложеным платежом", дополнительно оплачиваются почтовые сборы - 4% страховка + 4% комиссия за проведение платежа при получении заказа.</li>
+    <li><span style="color: #ff0000;" mce_style="color: #ff0000;">&lt;stro.g&gt;Внимание! В связи с возросшим кол-вом возвратов, заказы на сумму 5000 руб и более отправляются только после предоплаты.</strong></span></li-->
+    <li>Для удаленных регионов (ЯНАО, Якутия, Хабаровский край, Чукотская и Камчатская обл.) посылки отправляются только 1-ым классом. Условия бесплатной доставки в эти регионы действуют только для посылок весом не более 200 г.</li>
+    </ul>
+    <p style="margin-bottom: 0in; line-height: 100%;">&nbsp;</p>
+    <h3>Сроки:</h3>
+    <p style="margin-bottom: 0in; line-height: 100%;">Сроки доставки почтовых отправлений в пределах центральной части России, как правило, не превышает 7-10 дней. Контрольные сроки прохождения посылок можно посмотреть <span style="color: #0000ff;"><a href="https://chipster.ru/upload/files/upload_file/1/1.doc" title="Сроки доставки почтовых отправлений">здесь</a>.</span></p>
+    <p><i>Подробнее с условиями отравки посылок можно ознакомиться на сайте <span style="color: #0000ff;"><a target="_blank" href="http://www.russianpost.ru/rp/servise/ru/home/postuslug/bookpostandparcel/local#parcel" rel="nofollow">Почты России</a></span></i></p>
+    <h2><a name="courier"></a>Доставка курьером IML</h2>
+    <p>Доставка курьером возможна в следующие города:</p>
+    <ol>
+    <li>Москва, <i>в том числе подмосковье до 50км за МКАД</i></li>
+    <li>Санкт-Петербург, <i>в том числе до 30км за КАД</i></li>
+    <li> Брянск, Владимир, Вологда, Воронеж, Екатеринбург, Иваново, Казань, Калуга, Кострома, Курск, Смоленск, Нижний Новгород, Орел, Ростов-на-дону, Рязань, Тверь, Тула, Тюмень, Челябинск, Ярославль, Великий Новгород, Псков, Киров, Новороссийск, Астрахань, Белгород, <i>в том числе (до 10 км за пределы города)</i> </li>
+    </ol>
+    <h2><a name="punktv"></a>Доставка в пункты выдачи</h2>
+    <p>Пункты выдачи располагаются в следующих городах:</p>
+    <ol>
+    <li>Москва (20)</li>
+    <li>Санкт-Петербург (9)</li>
+    <li>Нижний Новгород (2)</li>
+    <li>Тверь (1)</li>
+    <li>Калуга (1)</li>
+    <li>Орел (1)</li>
+    <li>Ярославль (1)</li>
+    <li>Екатеринбург (1)</li>
+    <li>Тюмень (1)</li>
+    <li>Челябинск (1)</li>
+    <li>Ростов-на-Дону (1)</li>
+    <li>Барнаул(1)</li>
+    </ol>
+    <p>Полный список пунктов выдачи вы можете найти <span style="color: #0000ff;"><a href="https://chipster.ru/delivery/pvz">здесь</a></span></p>
+    <h2><a name="samovivoz"></a>Самовывоз со склада в Москве</h2>
+    <p><span style="color: #000000; font-family: Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20.390625px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;">Жители Москвы могут забрать заказ со склада в день его оформления.<br></span></p>
+    <p><span style="color: #000000; font-family: Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20.390625px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;"></span>График работы склада для самовывоза: <strong>пн.-пт. с 10-30 до 19-00 </strong>(кроме государственных праздников).<br><span style="color: #000000; font-family: Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20.390625px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;">Склад расположен по адресу:&nbsp;&nbsp;</span><span style="color: #000000; font-family: Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20.390625px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;"><span style="color: #000000; font-family: Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20.390625px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;"><strong>г. Москва, ул. Клары Цеткин д. 18к3, офис 25 (м. Войковская).</strong></span></span></p>
+    <p><span style="color: #000000; font-family: Helvetica, Arial, 'Liberation Sans&', FreeSans, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20.390625px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;"><strong>Физическим лицам:</strong></span><span style="color: #000000; font-family: Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20.390625px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;"> при себе необходимо иметь документ удостоверяющи личность.<br></span></p>
+    <p><span style="color: #000000; font-family: Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20.390625px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;"><strong>Юридическим лицам:</strong></span><span style="color: #000000; font-family: Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20.390625px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;"> представитель юридического лица при себе должен иметь доверенность на получение товара или печать предприятия. Если товар забирает курьер транспортной компании, он должен знать номер счета или номер заказа, по которому осуществляется отгрузка товара.</span></p>
+    <p><span style="color: #000000; font-family: Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20.390625px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;"><strong>Как проехать: </strong></span><span style="color: #000000; font-family: Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20.390625px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;">от метро Войковская на 23, 27, 30-м трамвае до остановки "Кинотеатр Рассвет" (3-я остановка).</span><br style="font-family: Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif; font-size: 12px; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20.390625px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px;"><span style="color: #000000; font-family: Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20.390625px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;">Вам нужно выйти из трамвая и перейти через перекресток и пройти по улице Клары Цеткин до дома 18. Далее идите до первой проходной с синим козырьком дома 18к3. Зайдите в здание, подойдите к посту охраны и назовите номер кабинета (25) или название магазина (chipster.ru) в который Вам нужно пройти. Охрана попросит предъявить паспорт или любой другой документ удостоверяющий личность. Далее пройдите по указателям на которых написано chipster.ru на второй этаж в офис 25.</span></p>	</div>
+
+
+</div>
+{% endblock %}
+
+	
